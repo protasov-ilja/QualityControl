@@ -95,13 +95,19 @@ FC /B tests\out.txt tests\isosceles_triangle.txt
 IF ERRORLEVEL 1 GOTO err
 
 REM running program where 2 and 3 sides are equale
-%PROGRAM% 4.1 4.1 5.1 > tests\out.txt
+%PROGRAM% 5.1 4.1 4.1 > tests\out.txt
 IF ERRORLEVEL 1 GOTO err
 FC /B tests\out.txt tests\isosceles_triangle.txt
 IF ERRORLEVEL 1 GOTO err
 
 REM running program where 3 and 1 sides are equale
 %PROGRAM% 4.1 5.1 4.1 > tests\out.txt
+IF ERRORLEVEL 1 GOTO err
+FC /B tests\out.txt tests\isosceles_triangle.txt
+IF ERRORLEVEL 1 GOTO err
+
+REM running program where coma and dot
+%PROGRAM% 4.1 5,1 4.1 > tests\out.txt
 IF ERRORLEVEL 1 GOTO err
 FC /B tests\out.txt tests\isosceles_triangle.txt
 IF ERRORLEVEL 1 GOTO err
