@@ -9,8 +9,8 @@ public class Main {
         try {
             UrlParser urlParser = new UrlParser(args[0]);
             urlParser.WriteResultsInFiles("all_links.txt", "broken_links.txt");
-        } catch (Exception er) {
-            System.out.println(er.getMessage());
+        } catch (Exception error) {
+            System.out.println(error.getMessage());
         }
     }
 }

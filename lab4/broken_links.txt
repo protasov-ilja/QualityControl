@@ -1,11 +1,10 @@
-http://links.testingcourse.ru/page12.html 404
-http://links.testingcourse.ru/page13.html 404
-http://links.testingcourse.ru/page15.html 404
-http://links.testingcourse.ru/page17.html 404
-http://links.testingcourse.ru/page16.html 404
-http://links.testingcourse.ru/page11.html 404
-<a href="tel:88001112233">lorem</a> 0
-http://links.testingcourse.ru/page.html 404
-http://links.testingcourse.ru/trololo 404
-http://links.testingcourse.ru/image.jpg 404
-<a href="javascript:alert('Hello');">commodo</a> 0
+http://links.testingcourse.ru/page12.html status: 404
+http://links.testingcourse.ru/page13.html status: 404
+http://links.testingcourse.ru/page15.html status: 404
+http://links.testingcourse.ru/page17.html status: 404
+http://links.testingcourse.ru/page16.html status: 404
+http://links.testingcourse.ru/page11.html status: 404
+http://links.testingcourse.ru/page.html status: 404
+http://links.testingcourse.ru/trololo status: 404
+http://links.testingcourse.ru/image.jpg status: 404
+Count: 9 Date: Tue Oct 02 17:28:54 MSK 2018

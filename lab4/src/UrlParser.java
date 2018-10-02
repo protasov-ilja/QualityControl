@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.net.URL;
 import java.io.IOException;
 import java.io.FileWriter;
+import java.util.Date;
 
 import org.jsoup.Jsoup;
 import org.jsoup.Connection.Response;
@@ -37,14 +38,17 @@ public class UrlParser {
         try {
             URL url = new URL(str);
             if (url.getHost().equals(_mainUrl.getHost())) {
-                url.toURI();
-
                 return UrlState.VALID;
             }
 
             return UrlState.OTHER;
         } catch (Exception er) {
-            return UrlState.INVALID;
+            if (str.contains(_mainUrl.toString()))
+            {
+                return UrlState.INVALID;
+            }
+
+            return UrlState.OTHER;
         }
     }
 
@@ -101,15 +105,15 @@ public class UrlParser {
             FileWriter allLinksFile = new FileWriter(allLinksFileName);
             FileWriter brokenLinksFile = new FileWriter(brokenLinksFileName);
             for (UrlInfo urlInfo : _allLinks) {
-                allLinksFile.write(urlInfo.GetUrlString() + ' ' + urlInfo.GetStatusCode() + System.lineSeparator());
+                allLinksFile.write(urlInfo.GetUrlString() + " status: " + urlInfo.GetStatusCode() + System.lineSeparator());
             }
-
+            allLinksFile.write("Count: " + _allLinks.size() + " Date: " + new Date());
             allLinksFile.close();
 
             for (UrlInfo urlInfo : _brokenLinks) {
-                brokenLinksFile.write(urlInfo.GetUrlString() + ' ' + urlInfo.GetStatusCode() + System.lineSeparator());
+                brokenLinksFile.write(urlInfo.GetUrlString() + " status: " + urlInfo.GetStatusCode() + System.lineSeparator());
             }
-
+            brokenLinksFile.write("Count: " + _brokenLinks.size() + " Date: " + new Date());
             brokenLinksFile.close();
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
